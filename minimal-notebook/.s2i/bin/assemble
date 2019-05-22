@@ -30,6 +30,23 @@ function module_installed() {
 
 if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     jupyter labextension install @jupyterlab/hub-extension
+    
+    # Install git extension
+
+    jupyter labextension install @jupyterlab/git
+    pip install jupyterlab-git
+    jupyter serverextension enable --py jupyterlab_git
+
+    # Install memory extension
+    
+    # container extension
+    jupyter labextension install jupyterlab-topbar-extension
+
+    # system metrics
+    jupyter labextension install jupyterlab-system-monitor
+    pip install nbresuse
+
+    
     npm cache clean --force
     rm -rf $HOME/.cache/yarn
     rm -rf $HOME/.node-gyp
