@@ -45,6 +45,9 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     # system metrics
     jupyter labextension install jupyterlab-system-monitor
     pip install nbresuse
+    
+    # custom text in the top bar
+    jupyter labextension install jupyterlab-topbar-text     
 
     
     npm cache clean --force
