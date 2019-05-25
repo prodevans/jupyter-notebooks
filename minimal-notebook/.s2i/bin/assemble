@@ -29,7 +29,10 @@ function module_installed() {
 }
 
 if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
-    jupyter labextension install @jupyterlab/hub-extension
+    
+    # Custom hub extension 
+    git clone https://github.com/drajanikant/hub-extension.git
+    jupyter labextension install ./hub-extension
     
     # Install git extension
 
