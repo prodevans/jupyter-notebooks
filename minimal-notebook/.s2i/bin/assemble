@@ -36,7 +36,7 @@ echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc
 # Refresh basically
 source .bashrc
 conda update conda
-conda install -c r rstudio 
+conda install -c r r-essentials
 
 
 function module_installed() {
