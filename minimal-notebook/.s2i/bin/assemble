@@ -50,23 +50,7 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     pip install nbresuse
     
     # custom text in the top bar
-    jupyter labextension install jupyterlab-topbar-text     
-    
-    echo " -----> Installing conda"
-    # Go to home directory
-    cd ~
-    # You can change what anaconda version you want at 
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/anaconda
-    rm -f Miniconda3-latest-Linux-x86_64.sh
-    echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
-    # Refresh basically
-    source .bashrc
-    conda update conda
-
-    echo " -----> Installing R Kernel package"
-    conda install -c r r-essentials -y
-
+    jupyter labextension install jupyterlab-topbar-text
     
     npm cache clean --force
     rm -rf $HOME/.cache/yarn
