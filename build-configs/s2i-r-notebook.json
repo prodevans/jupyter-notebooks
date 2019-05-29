@@ -1,0 +1,71 @@
+{
+  "kind": "List",
+  "apiVersion": "v1",
+  "items": [
+    {
+      "kind": "ImageStream",
+      "apiVersion": "image.openshift.io/v1",
+      "metadata": {
+        "name": "s2i-r-notebook",
+        "labels": {
+          "build": "s2i-r-notebook"
+        }
+      },
+      "spec": {
+        "lookupPolicy": {
+          "local": true
+        }
+      }
+    },
+
+    {
+      "kind": "BuildConfig",
+      "apiVersion": "build.openshift.io/v1",
+      "metadata": {
+        "name": "s2i-r-notebook-py36",
+        "labels": {
+          "build": "s2i-r-notebook"
+        }
+      },
+      "spec": {
+        "triggers": [
+          {
+            "type": "ConfigChange"
+          },
+          {
+            "type": "ImageChange"
+          }
+        ],
+        "source": {
+          "type": "Git",
+          "git": {
+            "uri": "https://github.com/prodevans/jupyter-notebooks",
+            "ref": "master"
+          },
+          "contextDir": "r-notebook"
+        },
+        "strategy": {
+          "type": "Source",
+          "sourceStrategy": {
+            "from": {
+              "kind": "ImageStreamTag",
+              "name": "python:3.6",
+              "namespace": "openshift"
+            }
+          }
+        },
+        "output": {
+          "to": {
+            "kind": "ImageStreamTag",
+            "name": "s2i-r-notebook:3.6"
+          }
+        },
+        "resources": {
+          "limits": {
+            "memory": "1Gi"
+          }
+        }
+      }
+    }
+  ]
+}
