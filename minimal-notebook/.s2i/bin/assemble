@@ -22,22 +22,6 @@ pip install 'supervisor==4.0.2'
 
 pip install -r /tmp/src/requirements.txt
 
-# Activate JupyterHub extension for JupyterLab.
-
-echo " -----> Installing R package"
-# Go to home directory
-cd ~
-# You can change what anaconda version you want at 
-# https://repo.continuum.io/archive/
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/anaconda
-rm -f Miniconda3-latest-Linux-x86_64.sh
-echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
-# Refresh basically
-source .bashrc
-conda update conda
-conda install -c r r-essentials
-
 function module_installed() {
     python -c "import sys, pkgutil; sys.exit(0 if pkgutil.find_loader('$1') else 1)"
 }
