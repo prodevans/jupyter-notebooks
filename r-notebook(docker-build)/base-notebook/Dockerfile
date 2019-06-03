@@ -120,32 +120,5 @@ COPY start-singleuser.sh /usr/local/bin/
 COPY jupyter_notebook_config.py /etc/jupyter/
 RUN  fix-permissions /etc/jupyter/
 
-#Custom hub extension 
-RUN cd $CONDA_DIR
-RUN conda install git
-RUN fix-permissions $CONDA_DIR    
-RUN fix-permissions /home/$NB_USER  
-RUN git clone https://github.com/drajanikant/hub-extension.git 
-RUN jupyter labextension install ./hub-extension
-RUN fix-permissions $CONDA_DIR  
-RUN fix-permissions /home/$NB_USER  
-
-# Install git extension
-# RUN jupyter labextension install @jupyterlab/git
-# RUN pip install jupyterlab_git
-# RUN jupyter serverextension enable --py jupyterlab_git
-
-
-# #Install memory extension
-# # container extension
-# RUN jupyter labextension install jupyterlab-topbar-extension
-# # system metrics
-# RUN jupyter labextension install jupyterlab-system-monitor
-# RUN pip install nbresuse
-    
-# # custom text in the top bar
-# RUN jupyter labextension install jupyterlab-topbar-text
-
-
 # Switch back to iventura to avoid accidental container runs as root
 USER $NB_UID
