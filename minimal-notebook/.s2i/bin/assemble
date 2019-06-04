@@ -115,3 +115,8 @@ rm -rf /tmp/src
 # Fixup permissions on directories and files.
 
 fix-permissions /opt/app-root
+
+# Changing logos
+cp /tmp/src/jupyterhub-80.png /opt/app-root/share/jupyterhub/static/images/jupyterhub-80.png
+cp /tmp/src/jupyter.png /opt/app-root/share/jupyterhub/static/images/jupyter.png
+
