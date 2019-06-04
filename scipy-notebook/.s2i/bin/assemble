@@ -38,3 +38,8 @@ MPLBACKEND=Agg python -c "import matplotlib.pyplot"
 # Fix up permissions.
 
 fix-permissions /opt/app-root
+
+#change the logo
+cp /tmp/src/jupyterhub-80.png /opt/app-root/share/jupyterhub/static/images/jupyterhub-80.png
+cp /tmp/src/jupyter.png /opt/app-root/share/jupyterhub/static/images/jupyter.png
+
