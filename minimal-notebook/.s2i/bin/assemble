@@ -32,6 +32,10 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     git clone https://github.com/drajanikant/hub-extension.git
     jupyter labextension install ./hub-extension
     
+    # Install google-drive extension
+    jupyter labextension install @jupyterlab/google-drive
+
+    
     # Install git extension
 
     jupyter labextension install @jupyterlab/git
