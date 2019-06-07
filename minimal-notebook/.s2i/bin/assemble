@@ -32,15 +32,20 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     git clone https://github.com/drajanikant/hub-extension.git
     jupyter labextension install ./hub-extension
     
-    # Install google-drive extension
-    jupyter labextension install @jupyterlab/google-drive
-
+    # Install Table of contents
+    jupyter labextension install @jupyterlab/toc
+    
+    # Install metadata extensions
+    pip install jupyterlab-metadata-service
+    jupyter labextension install jupyterlab-metadata-service
+    
     
     # Install git extension
 
     jupyter labextension install @jupyterlab/git
     pip install jupyterlab-git
     jupyter serverextension enable --py jupyterlab_git
+    jupyter serverextension enable --py --sys-prefix jupyterlab-metadata-service
 
     # Install memory extension
     
