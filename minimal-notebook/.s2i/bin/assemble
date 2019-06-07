@@ -36,9 +36,8 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     jupyter labextension install @jupyterlab/toc
     
     # Install metadata extensions
-    pip install jupyterlab-metadata-service
     jupyter labextension install jupyterlab-metadata-service
-    
+    jupyter serverextension enable --py --sys-prefix jupyterlab-metadata-service
     
     # Install git extension
 
