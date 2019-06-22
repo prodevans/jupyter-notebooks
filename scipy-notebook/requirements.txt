@@ -24,12 +24,13 @@ beautifulsoup4==4.6.*
 protobuf==3.*
 xlrd==1.2.*
 
-#Newly Added
+#Newly Added Libraries
 numpy==1.16.*
 fbprophet==0.*
 zipfile36==0.1.*
 nltk==3.4.*
 strings==0.1.*
+python-string-utils==0.6.*
 bs4==0.0.*
 kaggle==1.5.*
 json-e==3.0.*
