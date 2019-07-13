@@ -13,6 +13,10 @@ RUN rm -rf /tmp/src/.git* && \
 
 USER 1001
 
+ENV HOME /home/build
+
+ENV PATH="$HOME/conda/bin:$PATH"
+
 RUN /tmp/scripts/assemble
 
 CMD [ "/opt/app-root/builder/run" ]
