@@ -32,11 +32,13 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
 
 cd /tmp
 
-wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
+wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O $HOME/miniconda.sh
 
-bash Miniconda-latest-Linux-x86_64.sh
+chmod 0755 $HOME/miniconda.sh
 
-["/bin/bash", "-c", "$HOME/miniconda.sh -b -p $HOME/conda"]
+$HOME/miniconda.sh -b -p $HOME/conda
+
+rm $HOME/miniconda.sh
 
 conda update conda
 
