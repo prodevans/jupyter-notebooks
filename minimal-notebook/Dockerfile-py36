@@ -20,6 +20,10 @@ RUN conda update conda --yes
 RUN conda clean --all --yes 
 RUN rpm -e --nodeps curl bzip2 
 RUN yum clean all
+
+# Assign privilage
+RUN mkdir /usr/local/share/
+RUN chown -R 1001 /usr/local/share/
   
 USER 1001
 
