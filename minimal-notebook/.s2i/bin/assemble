@@ -45,7 +45,7 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     # Install memory extension
     
     # container extension
-    jupyter labextension install jupyterlab-topbar-extension==0.*
+#     jupyter labextension install jupyterlab-topbar-extension
 
     # system metrics
     jupyter labextension install jupyterlab-system-monitor
