@@ -55,6 +55,7 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     jupyter serverextension enable --py nbzip --sys-prefix
     
     # Adding data explorer
+    pip install jupyterlab>=1.0
     jupyter labextension install @jupyterlab/dataregistry-extension
 
 
