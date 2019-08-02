@@ -51,7 +51,10 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     
     # Install zip extension
     pip install jupyterlab-zip
-    
+    pip install nbzip
+    jupyter serverextension enable --py nbzip --sys-prefix
+
+
     npm cache clean --force
     rm -rf $HOME/.cache/yarn
     rm -rf $HOME/.node-gyp
