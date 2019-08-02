@@ -53,6 +53,9 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     pip install jupyterlab-zip
     pip install nbzip
     jupyter serverextension enable --py nbzip --sys-prefix
+    
+    # Adding data explorer
+    jupyter labextension install @jupyterlab/dataregistry-extension
 
 
     npm cache clean --force
