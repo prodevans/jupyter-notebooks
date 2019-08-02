@@ -39,8 +39,8 @@ if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
     
     # Install zip extension
     pip install jupyterlab-zip
-    pip install nbzip
-    jupyter serverextension enable --py nbzip
+#     pip install nbzip
+#     jupyter serverextension enable --py nbzip
     
     # Install memory extension
     
