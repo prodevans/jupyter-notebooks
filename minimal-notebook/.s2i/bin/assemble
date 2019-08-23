@@ -28,34 +28,28 @@ function module_installed() {
 
 if module_installed 'jupyterhub' && module_installed 'jupyterlab'; then
 
-    # Custom hub extension 
-    git clone https://github.com/prodevans/hub-extension.git
-    jupyter labextension install ./hub-extension
+#     # Custom hub extension 
+#     git clone https://github.com/prodevans/hub-extension.git
+#     jupyter labextension install ./hub-extension
     
-    # Install git extension
-    jupyter labextension install @jupyterlab/git
-    pip install jupyterlab-git
-    jupyter serverextension enable --py jupyterlab_git
+#     # Install git extension
+#     jupyter labextension install @jupyterlab/git
+#     pip install jupyterlab-git
+#     jupyter serverextension enable --py jupyterlab_git
        
-    # Install memory extension
+#     # Install memory extension
     
-    # container extension
-    jupyter labextension install jupyterlab-topbar-extension
+#     # container extension
+#     jupyter labextension install jupyterlab-topbar-extension
 
-    # system metrics
-    jupyter labextension install jupyterlab-system-monitor
-    pip install nbresuse
+#     # system metrics
+#     jupyter labextension install jupyterlab-system-monitor
+#     pip install nbresuse
     
-    # custom text in the top bar
-    jupyter labextension install jupyterlab-topbar-text
+#     # custom text in the top bar
+#     jupyter labextension install jupyterlab-topbar-text
     
-    # Install zip extension
-    pip install jupyterlab-zip
-    pip install nbzip
-    jupyter serverextension enable --py nbzip --sys-prefix
-    
-
-
+  
     npm cache clean --force
     rm -rf $HOME/.cache/yarn
     rm -rf $HOME/.node-gyp
